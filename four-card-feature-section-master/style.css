@@ -1,0 +1,123 @@
+body {
+    padding: 2%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    background-color: hsl(0, 0%, 98%);
+}
+
+@media screen and (min-width: 1000px) {
+    .grid-container {
+        display: grid;
+        width: 100%;
+        max-width: 1200px;
+        height: 70%;
+        margin: 50px auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: '. teambuilder .'
+                            'supervisor teambuilder calculator'
+                            'supervisor karma calculator'
+                            '. karma .';
+    }
+    #text-container div {
+        width: 40%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        display: grid;
+        margin: 50px auto;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 'supervisor teambuilder'
+                            'karma calculator';
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .grid-container {
+        display: grid;
+        margin: 50px auto;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 'supervisor'
+                            'teambuilder'
+                            'karma'
+                            'calculator';
+    }
+}
+
+.grid-item {
+    background-color: white;
+    border-radius: 5px;
+    padding: 0 5%;
+    border-top: 5px;
+    border-top-style: solid;
+    margin: 10px;
+    box-shadow: 5px 10px 8px #b6b5b5;
+    height: 250px;
+    position: relative;
+}
+
+.grid-item:hover {
+    transform: translate(-5px, -5px);
+}
+
+img {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    margin-bottom: 0.5em;
+}
+
+.center {
+    text-align: center;
+}
+
+.light-grey-text {
+    color: hsl(229, 6%, 66%);
+}
+
+.big-text {
+    font-size: min(40px, 7vw);
+}
+
+.light {
+    font-weight: 200;
+    color: hsl(234, 12%, 34%);
+    margin: 5px;
+}
+
+.bold {
+    font-weight: 600;
+    color: hsl(234, 12%, 34%);
+    margin: 5px;
+}
+
+.normal {
+    font-weight: 400;
+}
+
+.grid-container > div:nth-of-type(1) {
+    grid-area: supervisor;
+    border-color: hsl(180, 62%, 55%);
+}
+
+.grid-container > div:nth-of-type(2) {
+    grid-area: teambuilder;
+    border-color: hsl(0, 78%, 62%);
+}
+
+.grid-container > div:nth-of-type(3) {
+    grid-area: karma;
+    border-color: hsl(34, 97%, 64%);
+}
+
+.grid-container > div:nth-of-type(4) {
+    grid-area: calculator;
+    border-color: hsl(212, 86%, 64%);
+}
